@@ -13,6 +13,16 @@
   height: 20vh;
 }
 
+p{
+  font-size: 20px;
+}
+
+@media screen and (max-width: 570px) {
+  p{
+    font-size: 15px;
+  }
+}
+
 .form-content{
   padding:20px;
   display: flex;
