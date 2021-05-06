@@ -15,9 +15,9 @@ function ThemeSelector() {
         <button class="dropbtn">Select a Theme</button>
         <div class="dropdown-content">
           {
-              themeList.map((val) => {
+              themeList.map((val, index) => {
               return(
-                <p onClick={() => dispatch(SetTheme(val)) } style={{ cursor: 'pointer' }}>{val.name}</p>
+                <p onClick={() => dispatch(SetTheme(index)) } style={{ cursor: 'pointer' }}>{val.name}</p>
               )
             })
           }

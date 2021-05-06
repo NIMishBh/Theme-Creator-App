@@ -8,12 +8,21 @@ const initialState = {
 const ThemeReducer = (state = initialState, action) => {
   switch (action.type) {
     case "Add_Theme":
-      state.themeList.push(action.payload);
-      console.log("Theme Added Succesfully")
-      return state;
+      return{
+        ...state,
+        themeList:[
+          ...state.themeList,
+          { 
+            name : action.payload.name,
+            bgcolor: action.payload.bgcolor,
+            fgcolor: action.payload.fgcolor
+          }
+        ]
+      }
     case "Set_Theme":
-      state.currentTheme = action.payload
-      console.log("Theme set successfully")
+      let index = action.payload;
+      state.currentTheme = state.themeList[index];
+      console.log("Theme Set Successfully")
       return state;
     default:
       return state;
